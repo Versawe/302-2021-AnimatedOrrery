@@ -43,6 +43,8 @@ public class RevolveAround : MonoBehaviour
 
         if (num2 <= 0) num2 = 0;
         if (num2 >= 20) num2 = 20;
+
+        timeChange = PauseScript.sliderControl;
     }
 
     private void OnCollisionEnter(Collision collision)
