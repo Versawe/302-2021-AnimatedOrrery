@@ -14,10 +14,6 @@ public class PauseScript : MonoBehaviour
         sliderControl = slide.value;
     }
 
-    private void Update()
-    {
-        print(sliderControl);
-    }
     public void pauseGame()
     {
         if (!isPaused)

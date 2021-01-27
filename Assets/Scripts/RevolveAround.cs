@@ -19,8 +19,15 @@ public class RevolveAround : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("Sun");
-        radius = UnityEngine.Random.Range(2.5f,15);
+        if (gameObject.name.Substring(0, 1) == "P") 
+        {
+            target = GameObject.Find("Sun");
+            radius = UnityEngine.Random.Range(3.5f, 15);
+        }
+        else
+        {
+            radius = UnityEngine.Random.Range(1.5f, 3f);
+        }
 
         mr = GetComponent<MeshRenderer>();
         sc = GetComponent<SphereCollider>();
@@ -32,19 +39,29 @@ public class RevolveAround : MonoBehaviour
 
     void Update()
     {
-        age += timeChange * Time.deltaTime;
+        if (gameObject.name.Substring(0, 1) == "M" && target.GetComponent<SpawnParticles>().enabled) 
+        {
+            mr.enabled = false;
+            gameObject.GetComponent<SpawnParticles>().enabled = true;
+            sc.enabled = false;
+            Destroy(gameObject);
+        }
+        else
+        {
+            age += timeChange * Time.deltaTime;
 
-        Vector3 offset = AnimMath.RandomRotation(radius, age, num1, num2);
+            Vector3 offset = AnimMath.RandomRotation(radius, age, num1, num2);
 
-        transform.position = target.transform.position + offset;
+            transform.position = target.transform.position + offset;
 
-        if (num1 <= 0) num1 = 0;
-        if (num1 >= 20) num1 = 20;
+            if (num1 <= 0) num1 = 0;
+            if (num1 >= 20) num1 = 20;
 
-        if (num2 <= 0) num2 = 0;
-        if (num2 >= 20) num2 = 20;
+            if (num2 <= 0) num2 = 0;
+            if (num2 >= 20) num2 = 20;
 
-        timeChange = PauseScript.sliderControl;
+            timeChange = PauseScript.sliderControl;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
