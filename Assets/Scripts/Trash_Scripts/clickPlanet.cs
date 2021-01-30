@@ -8,7 +8,6 @@ public class clickPlanet : MonoBehaviour
     public static bool moveIt = false;
     public static GameObject planetClicked;
 
-    public GameObject camMount;
     private Vector3 relPos;
     public GameObject MainCam;
     public GameObject start;
@@ -48,7 +47,7 @@ public class clickPlanet : MonoBehaviour
 
         if (moveIt && planetClicked.name == gameObject.name)
         {
-            privateGO = camMount;
+            privateGO = planetClicked;
             relPos = RotateCamera(planetClicked.transform.position, MainCam.transform.position);
             Quaternion rotation = Quaternion.LookRotation(relPos, Vector3.up);
             MainCam.transform.rotation = rotation;
@@ -65,17 +64,6 @@ public class clickPlanet : MonoBehaviour
             //MainCam.transform.position = Vector3.MoveTowards(MainCam.transform.position, privateGO.transform.position, step);
         }
 
-        
-    }
-
-    private void OnMouseDown()
-    {
-        if (!moveIt)
-        {
-            //print("clicked " + gameObject.name);
-            planetClicked = GameObject.Find(gameObject.name);
-            moveIt = true;
-        }
         
     }
 
