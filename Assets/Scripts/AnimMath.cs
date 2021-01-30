@@ -156,4 +156,116 @@ public static class AnimMath
 
         return offset;
     }
+
+    public static List<string> ExtractOffset(float randomNum1, float randomNum2)
+    {
+        List<string> offsetMaths = new List<string>();
+
+        if (randomNum1 < 5)
+        {
+            if (randomNum2 < 5)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+            }
+            else if (randomNum2 >= 5 && randomNum2 < 10)
+            {
+                offsetMaths.Add("Mathf.Cos x");
+                offsetMaths.Add("Mathf.Sin y");
+            }
+            else if (randomNum2 >= 10 && randomNum2 < 15)
+            {
+                offsetMaths.Add("Mathf.Sin x");
+                offsetMaths.Add("Mathf.Cos y");
+            }
+            else if (randomNum2 >= 15 && randomNum2 < 20)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+            }
+        }
+        else if (randomNum1 >= 5 && randomNum1 < 10)
+        {
+            if (randomNum2 < 5)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+            }
+            else if (randomNum2 >= 5 && randomNum2 < 10)
+            {
+                offsetMaths.Add("Mathf.Cos x");
+                offsetMaths.Add("Mathf.Sin z");
+            }
+            else if (randomNum2 >= 10 && randomNum2 < 15)
+            {
+                offsetMaths.Add("Mathf.Sin x");
+                offsetMaths.Add("Mathf.Cos z");
+            }
+            else if (randomNum2 >= 15 && randomNum2 < 20)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Cos");
+            }
+        }
+        else if (randomNum1 >= 10 && randomNum1 < 15)
+        {
+            if (randomNum2 < 5)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+            }
+            else if (randomNum2 >= 5 && randomNum2 < 10)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+            }
+            else if (randomNum2 >= 10 && randomNum2 < 15)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+            }
+            else if (randomNum2 >= 15 && randomNum2 < 20)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+            }
+        }
+        else if (randomNum1 >= 15 && randomNum1 < 20)
+        {
+            if (randomNum2 < 5)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Cos");
+            }
+            else if (randomNum2 >= 5 && randomNum2 < 10)
+            {
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Cos");
+            }
+            else if (randomNum2 >= 10 && randomNum2 < 15)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+                offsetMaths.Add("Mathf.Cos");
+            }
+            else if (randomNum2 >= 15 && randomNum2 < 20)
+            {
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
+            }
+        }
+
+        return offsetMaths;
+    }
 }
