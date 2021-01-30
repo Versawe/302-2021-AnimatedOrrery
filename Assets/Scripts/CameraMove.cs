@@ -13,15 +13,6 @@ public class CameraMove : MonoBehaviour
 
     private float ease = 0.01f;
 
-    float pitch = 0;
-    float targetPitch = 0;
-
-    float pitch2 = 0;
-    float targetPitch2 = 0;
-
-    float dis = 10;
-    float targetDis = 10;
-
     private string currPlanet = "None";
     // Start is called before the first frame update
     void Start()
