@@ -10,6 +10,9 @@ public class Controller : MonoBehaviour
 
     public List<GameObject> planets;
     public List<GameObject> moons;
+    public List<LineRenderer> lines;
+
+    public bool lines_Enabled = false;
 
     //public GameObject moon;
 
@@ -36,23 +39,59 @@ public class Controller : MonoBehaviour
             moons[i + 5].GetComponent<RevolveAround>().radius = setMoonRadius;
             setMoonRadius = 0.5f;
         }
-    }
 
+        lines_Enabled = true;
+    }
 
     public void Show_Buttons()
     {
-        foreach (Button butt in buttons)
+        if (!CameraMove.isZoomed)
         {
-            butt.gameObject.SetActive(true);
+            foreach (Button butt in buttons)
+            {
+                butt.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            buttons[5].gameObject.SetActive(true);
         }
     }
 
     public void Hide_Buttons()
     {
-        foreach (Button butt in buttons)
+        if (!CameraMove.isZoomed)
         {
-            butt.gameObject.SetActive(false);
+            foreach (Button butt in buttons)
+            {
+                butt.gameObject.SetActive(false);
+            }
         }
+        else
+        {
+            buttons[5].gameObject.SetActive(false);
+        }
+    }
+
+    public void Toggle_Lines()
+    {
+        if (lines_Enabled)
+        {
+            lines_Enabled = false;
+            foreach (LineRenderer line in lines)
+            {
+                line.gameObject.SetActive(false);
+            }
+        }
+        else if (!lines_Enabled)
+        {
+            lines_Enabled = true;
+            foreach (LineRenderer line in lines)
+            {
+                line.gameObject.SetActive(true);
+            }
+        }
+
     }
 
 }

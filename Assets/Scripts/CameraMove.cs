@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMove : MonoBehaviour
 {
     public List<GameObject> planets;
+    public List<Button> buttons;
     public GameObject start;
     public GameObject sun;
     //public GameObject physicalCam;
@@ -12,6 +14,8 @@ public class CameraMove : MonoBehaviour
     Quaternion rotation;
 
     private float ease = 0.01f;
+
+    public static bool isZoomed = false;
 
     private string currPlanet = "None";
     // Start is called before the first frame update
@@ -65,26 +69,55 @@ public class CameraMove : MonoBehaviour
     public void Move2Planet1()
     {
         if(currPlanet == "None") currPlanet = "p1";
+        isZoomed = true;
+        foreach (Button butt in buttons){
+            butt.gameObject.SetActive(false);
+        }
     }
     public void Move2Planet2()
     {
         if (currPlanet == "None") currPlanet = "p2";
+        isZoomed = true;
+        foreach (Button butt in buttons)
+        {
+            butt.gameObject.SetActive(false);
+        }
     }
     public void Move2Planet3()
     {
         if (currPlanet == "None") currPlanet = "p3";
+        isZoomed = true;
+        foreach (Button butt in buttons)
+        {
+            butt.gameObject.SetActive(false);
+        }
     }
     public void Move2Planet4()
     {
         if (currPlanet == "None") currPlanet = "p4";
+        isZoomed = true;
+        foreach (Button butt in buttons)
+        {
+            butt.gameObject.SetActive(false);
+        }
     }
     public void Move2Planet5()
     {
         if (currPlanet == "None") currPlanet = "p5";
+        isZoomed = true;
+        foreach (Button butt in buttons)
+        {
+            butt.gameObject.SetActive(false);
+        }
     }
     public void MoveBack()
     {
         if (currPlanet != "None") currPlanet = "None";
+        isZoomed = false;
+        foreach (Button butt in buttons)
+        {
+            butt.gameObject.SetActive(true);
+        }
     }
     public Vector3 RotateCamera(Vector3 lookAt, Vector3 cam, GameObject camGO)
     {

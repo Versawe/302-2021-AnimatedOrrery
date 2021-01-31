@@ -53,14 +53,14 @@ public static class AnimMath
         {
             if (randomNum2 < 5)
             {
-                offset.x = Mathf.Sin(currentAngle) * radius;
+                //offset.x = Mathf.Sin(currentAngle) * radius;
                 offset.y = Mathf.Sin(currentAngle) * radius;
                 offset.z = Mathf.Cos(currentAngle) * radius;
             }
             else if (randomNum2 >= 5 && randomNum2 < 10)
             {
                 offset.x = Mathf.Cos(currentAngle) * radius;
-                offset.y = Mathf.Sin(currentAngle) * radius;
+                offset.y = -Mathf.Sin(currentAngle) * radius;
             }
             else if(randomNum2 >= 10 && randomNum2 < 15)
             {
@@ -69,7 +69,7 @@ public static class AnimMath
             }
             else if (randomNum2 >= 15 && randomNum2 < 20)
             {
-                offset.x = Mathf.Cos(currentAngle) * radius;
+                //offset.x = Mathf.Cos(currentAngle) * radius;
                 offset.y = Mathf.Cos(currentAngle) * radius;
                 offset.z = Mathf.Sin(currentAngle) * radius;
             }
@@ -79,7 +79,7 @@ public static class AnimMath
             if (randomNum2 < 5)
             {
                 offset.x = Mathf.Cos(currentAngle) * radius;
-                offset.y = Mathf.Sin(currentAngle) * radius;
+                //offset.y = Mathf.Sin(currentAngle) * radius;
                 offset.z = Mathf.Sin(currentAngle) * radius;
             }
             else if (randomNum2 >= 5 && randomNum2 < 10)
@@ -96,32 +96,32 @@ public static class AnimMath
             {
                 offset.x = Mathf.Sin(currentAngle) * radius;
                 offset.y = Mathf.Cos(currentAngle) * radius;
-                offset.z = Mathf.Cos(currentAngle) * radius;
+                //offset.z = Mathf.Cos(currentAngle) * radius;
             }
         }
         else if (randomNum1 >= 10 && randomNum1 < 15)
         {
             if (randomNum2 < 5)
             {
-                offset.x = Mathf.Cos(currentAngle) * radius;
-                offset.y = Mathf.Sin(currentAngle) * radius;
+                offset.x = -Mathf.Cos(currentAngle) * radius;
+                //offset.y = Mathf.Sin(currentAngle) * radius;
                 offset.z = Mathf.Sin(currentAngle) * radius;
             }
             else if (randomNum2 >= 5 && randomNum2 < 10)
             {
                 offset.x = Mathf.Cos(currentAngle) * radius;
-                offset.y = Mathf.Sin(currentAngle) * radius;
+                //offset.y = Mathf.Sin(currentAngle) * radius;
                 offset.z = Mathf.Sin(currentAngle) * radius;
             }
             else if (randomNum2 >= 10 && randomNum2 < 15)
             {
                 offset.x = Mathf.Sin(currentAngle) * radius;
                 offset.y = Mathf.Cos(currentAngle) * radius;
-                offset.z = Mathf.Sin(currentAngle) * radius;
+                //offset.z = Mathf.Sin(currentAngle) * radius;
             }
             else if (randomNum2 >= 15 && randomNum2 < 20)
             {
-                offset.x = Mathf.Sin(currentAngle) * radius;
+                //offset.x = Mathf.Sin(currentAngle) * radius;
                 offset.y = Mathf.Sin(currentAngle) * radius;
                 offset.z = Mathf.Cos(currentAngle) * radius;
             }
@@ -130,25 +130,25 @@ public static class AnimMath
         {
             if (randomNum2 < 5)
             {
-                offset.x = Mathf.Sin(currentAngle) * radius;
+                offset.x = -Mathf.Sin(currentAngle) * radius;
                 offset.y = Mathf.Cos(currentAngle) * radius;
-                offset.z = Mathf.Cos(currentAngle) * radius;
+                //offset.z = Mathf.Cos(currentAngle) * radius;
             }
             else if (randomNum2 >= 5 && randomNum2 < 10)
             {
                 offset.x = Mathf.Sin(currentAngle) * radius;
-                offset.y = Mathf.Cos(currentAngle) * radius;
-                offset.z = Mathf.Cos(currentAngle) * radius;
+                offset.y = -Mathf.Cos(currentAngle) * radius;
+                //offset.z = Mathf.Cos(currentAngle) * radius;
             }
             else if (randomNum2 >= 10 && randomNum2 < 15)
             {
                 offset.x = Mathf.Cos(currentAngle) * radius;
                 offset.y = Mathf.Sin(currentAngle) * radius;
-                offset.z = Mathf.Cos(currentAngle) * radius;
+                //offset.z = Mathf.Cos(currentAngle) * radius;
             }
             else if (randomNum2 >= 15 && randomNum2 < 20)
             {
-                offset.x = Mathf.Cos(currentAngle) * radius;
+                //offset.x = Mathf.Cos(currentAngle) * radius;
                 offset.y = Mathf.Cos(currentAngle) * radius;
                 offset.z = Mathf.Sin(currentAngle) * radius;
             }
@@ -227,9 +227,10 @@ public static class AnimMath
             }
             else if (randomNum2 >= 10 && randomNum2 < 15)
             {
-                offsetMaths.Add("Mathf.Sin");
+                
                 offsetMaths.Add("Mathf.Sin");
                 offsetMaths.Add("Mathf.Cos");
+                offsetMaths.Add("Mathf.Sin");
             }
             else if (randomNum2 >= 15 && randomNum2 < 20)
             {
