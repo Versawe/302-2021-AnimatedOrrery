@@ -130,8 +130,11 @@ public class CameraMove : MonoBehaviour
 
     private float adjustCamEase(Vector3 camDis, Vector3 planetDis, float easeSpeed)
     {
-        float disFromEach = Vector3.Distance(camDis, planetDis);
-        easeSpeed = easeSpeed / disFromEach;            
+        if (PauseScript.sliderControl > 2 || PauseScript.sliderControl < -2)
+        {
+            float disFromEach = Vector3.Distance(camDis, planetDis);
+            easeSpeed = easeSpeed / disFromEach * Time.deltaTime;
+        }            
         return easeSpeed;
     }
 
